@@ -23,7 +23,7 @@
 
 -include("eopenid_debug.hrl").
 
--type( dict() :: list() ).
+-type( local_dict() :: list() ).
 
 -define(SERVER, ?MODULE).
 -define(TABLE, ?MODULE).
@@ -36,7 +36,7 @@
 %%% @doc Store the Association Handle for a certain Provider.
 %%% @end
 %%% --------------------------------------------------------------------
--spec put_assoc_dict( string() , dict() ) -> ok.
+-spec put_assoc_dict( string() , local_dict() ) -> ok.
 
 put_assoc_dict(Provider, AssocDict) ->
     AD = in("saved_at_gsec", i2l(gnow()), AssocDict),

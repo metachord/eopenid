@@ -101,7 +101,7 @@ all(Dict) ->
 %%%      Returns an URL that the end user should be redirected to.
 %%% @end
 %%% --------------------------------------------------------------------
--spec verify_signed_keys( string(), dict() ) -> bool().
+-spec verify_signed_keys( string(), dict() ) -> boolean().
     
 verify_signed_keys(Url, Dict0) -> 
     Qargs = get_query_args(Url),
@@ -363,9 +363,9 @@ pick(S, _, _)                       -> S.
     
 
 -type( tree() :: tuple() ).
--type( set() :: list() ).
+-type( local_set() :: list() ).
 
--spec gelems( [binary()] , [tree()] ) -> set().
+-spec gelems( [binary()] , [tree()] ) -> local_set().
 
 gelems(Path, Tree) ->
     ordsets:to_list(gelems(Path, [Tree], ordsets:new())).
