@@ -84,13 +84,13 @@ http_get(Url) ->
     http_get(Url, []).
 
 http_get(Url, Hdrs) ->    
-    http:request(get, {Url, Hdrs}, [], []).
+    httpc:request(get, {Url, Hdrs}, [], []).
 
 %%% 
 %%%@doc Perform an HTTP POST request.
 %%%@end
 http_post(Url, Hdrs, ContentType, Body) ->
-    http:request(post, {Url,Hdrs,ContentType,Body}, [], []).
+    httpc:request(post, {Url,Hdrs,ContentType,Body}, [], []).
     
 
 %%%
